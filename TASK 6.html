@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>ELIZABETH KOWALSKI | WEEK 6</title>
+    <link href="https://fonts.googleapis.com/css?family=Kalam&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles/main.css">
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Allura&family=Cookie&family=Festive&display=swap" rel="stylesheet">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Amatic+SC&display=swap" rel="stylesheet">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Lobster+Two&display=swap" rel="stylesheet">
+
+<script>
+    function personalize() {
+    let name = document.getElementById('nameInputBox').value;
+    let verse1 = "<p2>\"So God created  <strong>" +
+        name + "</strong>, in his own image; in the image of God, he created <strong>" + name +"</strong>; male and female he created them</p2><br/><strong>Genesis 1:27</strong><br/><br/>";
+    let verse2 = "<p2>\"Adam fell that <strong> " + name +" </strong> might be; and <strong> " + name + "</strong> [is], that <strong>" + name + " </strong> might have joy <br/></p2><strong>2 Nephi 31:3</strong>";
+    let scriptures = verse1
+    let scripture = verse2
+    document.getElementById('scripture').innerHTML = scriptures + scripture;
+    }
+</script>
+</head>
+
+<body>
+    <nav>
+        <ul id="menu">
+            <li><a id="toggleMenu">&equiv;</a></li>
+            <li><a href="home.html">HOME</a></li>
+            <li><a href="TASK 2.html" class="active">LESSON 2</a></li>
+            <li><a href="TASK 3.html"class="active">LESSON 3</a></li>
+            <li><a href="TASK 4.html" class="active">LESSON 4</a></li>
+            <li><a href="TASK 5.html" class="active">LESSON 5</a></li>
+            <li><a href="TASK 6.html" class="active">PROJECT</a></li>
+        </ul>
+    </nav>
+    <header>
+        <label><strong>Click the HOME button to go back to my webpage</strong></label>
+        <h1> Project | Personalized Scripture</h1>
+    </header>
+    <main>
+        <section>
+            <p2>
+                Today is <span id="message2"></span>.<br/>
+            </p>
+            <p2>
+                <span id="message1"></span><br/><br/>
+            </p2>
+            <p2> *Every Tuesday a message will display devotional is today with time and location.  Every Sunday 
+                a message will display church is today.  Every Monday a message will display FHE is today*
+            </p>
+        </section>
+        <hr>
+        <section>
+            <div>
+                <p2>This is an interesting activity which help us 
+                    to feel clossed or identified with the Holy Scriptures. You can use it
+                    in your personal study or if you want others to learn 
+                    about this learning skill.
+                </p2>
+                <p2>I will show you some examples. To start, 
+                put your <strong>name</strong> below click on <strong>send</strong>. Then you will receive these examples.</p2><br/><br/>
+                <input type="text" id="nameInputBox" placeholder="Ex. Elizabeth">
+            </div>
+            <div id="scripture" style="text-align: justify;"></div>
+            <button type="button" class="button"
+                onclick="personalize()">SEND</button>
+                <div id="outputA"></div>
+        </div>
+        </section>
+        </main>
+    </main>
+    <footer>
+        &copy;2021<span id="year"></span> | ELIZABETH KOWALSKI
+    </footer>
+    <script src="scripts/main.js"></script>
+    <script src="scripts/task6.js"></script>
+</body>
+
+</html>

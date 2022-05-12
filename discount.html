@@ -1,0 +1,96 @@
+
+<!DOCTYPE HTML>
+<html lang="en-us">
+  <head>  
+    <meta charset="utf-8">
+    <title>E.DAVIS | DISCOUNT</title>
+    <link href="https://fonts.googleapis.com/css?family=Kalam&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles/main.css">
+ 
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Allura&family=Cookie&family=Festive&display=swap" rel="stylesheet">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Amatic+SC&display=swap" rel="stylesheet">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Lobster+Two&display=swap" rel="stylesheet">
+
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@100&family=Share+Tech+Mono&display=swap" rel="stylesheet" >
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <script>
+        //Defining Table: DISCOUNT
+        //input: the user will input what date it is and the purchase amount
+        //processing: depending on if it is Tuesday or Wednesday, the program will subtract 10% and add
+        //6% to the total to create a discount on those two days, else it will just add 6%
+        //output:  the total of the purchase amount depending on that day. 
+      function retaildiscount(){
+          //establishing the variables
+          let purchaseamount = parseFloat(document.getElementById("purchaseamountA").value);
+          var dayOfWeek = new Date().getDay();
+          let day= ['Sunday', 'Monday', 'Tuesday', 'Wednesday','Thursday', 'Friday', 'Saturday']
+          let initialrate= 0;
+          //this is my discount formula
+          let discount = purchaseamount-(purchaseamount *.1);
+          let totaldiscount = ((discount *0.06)+ discount).toFixed(2);
+          //this is my non discount formula
+          let purchasetotal =((purchaseamount*0.06)+purchaseamount).toFixed(2);
+          //if the purchase is greater than 50 and tuedsay and Wednesday then 10% discount is added
+          if (purchaseamount >=50 && (dayOfWeek==2||dayOfWeek==3)){
+            initialrate=.01
+            document.getElementById("outputamount").innerHTML="TODAY IS "+ 
+            day[dayOfWeek] + ". YOUR TOTAL IS: "+ totaldiscount + 
+            ". YOUR PURCHASE WAS GREATER THAN $50.  10% WAS ADDED."
+          }
+          //if the purchase is under than 50 and tuesday and Wednesday then 10% discount is not added
+          else if (purchaseamount <=50 && (dayOfWeek==2||dayOfWeek==3)){
+            initialrate=0.00
+            document.getElementById("outputamount").innerHTML="TODAY IS " +
+            day[dayOfWeek]+ ". YOUR TOTAL IS: "+ purchasetotal + 
+            ". YOUR TOTAL PURCHASE WAS NOT GREATER THAN %50.  10% IS NOT ADDED" + " PURCHASE MORE THINGS TO RECEIVE A DISCOUNT" 
+          }
+          //wanted to add some latter-day flare on both conditions over, equal to, and under $50
+          else if (purchaseamount <=50 && (dayOfWeek==0)){
+            initialrate=0.00
+            document.getElementById("outputamount").innerHTML="TODAY IS " +
+            day[dayOfWeek]+ ". YOUR TOTAL IS: "+ purchasetotal + 
+            ". PLEASE OBSERVE THE SABBATH DAY!" 
+          }
+          else if (purchaseamount >=50 && (dayOfWeek==0)){
+            initialrate=0.00
+            document.getElementById("outputamount").innerHTML="TODAY IS " +
+            day[dayOfWeek]+ ". YOUR TOTAL IS: "+ purchasetotal + 
+            ". PLEASE OBSERVE THE SABBATH DAY!" 
+          }
+          //if the date is not tuesday or Wednesday the total amount with tax added will appear
+          else {
+            initialrate=0.00
+            document.getElementById("outputamount").innerHTML= "TODAY IS " +
+            day[dayOfWeek]+ "YOUR TOTAL IS: " + purchasetotal +
+            ". YOU HAVE PURCHASED AN ITEM NOT ON WEDNESDAY OR THURSDAY." +  " TO PARTICIPATE IN A 10% DISCOUNT, " +
+            ". ORDER ON TUESDAY OR WEDNESDAY WITH THE PURCHASE OVER $50 FOR A 10% DISCOUNT. "
+          }
+      }
+</script>
+  <style>
+  body {
+  
+    background-repeat: no-repeat;
+  	background-attachment: fixed;
+	  background-size: cover;
+    text-align: center;
+    color: #ffb6c1;
+    }
+  </style>
+<body>
+    <h1>Discount Calculator</h1>
+    <p>DIRECTIONS: TYPE IN THE PURCHASE AMOUNT AND CLICK THE BUTTON. </p>
+    <!--Code for buttons and text and div tag-->
+    <input type="text" id="purchaseamountA" class="text">
+    <button type="button" onclick="retaildiscount()">CLICK</button>
+    <div id="outputamount"></div>

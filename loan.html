@@ -1,0 +1,117 @@
+<!Doctype html>
+<html lang="en-us">
+   <head>
+       <meta charset="utf-8">
+       <title>E. DAVIS|LOANS</title>
+       <link href="https://fonts.googleapis.com/css?family=Kalam&display=swap" rel="stylesheet">
+       <link rel="stylesheet" href="styles/main.css">
+    
+       <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+   
+       <link rel="preconnect" href="https://fonts.googleapis.com">
+       <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+       <link href="https://fonts.googleapis.com/css2?family=Allura&family=Cookie&family=Festive&display=swap" rel="stylesheet">
+   
+       <link rel="preconnect" href="https://fonts.googleapis.com">
+       <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+       <link href="https://fonts.googleapis.com/css2?family=Amatic+SC&display=swap" rel="stylesheet">
+   
+       <link rel="preconnect" href="https://fonts.googleapis.com">
+       <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+       <link href="https://fonts.googleapis.com/css2?family=Lobster+Two&display=swap" rel="stylesheet">
+   
+       <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@100&family=Share+Tech+Mono&display=swap" rel="stylesheet" >
+       <link rel="preconnect" href="https://fonts.gstatic.com">
+       <script>
+           /*Input: User's input from amoung borrowed, interest rate, number of years, payments/year, 
+           and number of payments paid to day
+           Processing: Calculates the monthly payment for a loan including a fixed annual rate
+           Next, it will calculate the balance including the fixed annual interest rate
+           Output: Two outputs will be displayed, monthly payments for a loan and the total balance of the loan */
+           function doPayment(){
+               //definining my variables to get the user's input
+               let principal=parseFloat(document.getElementById("inputprinc").value);
+               let annualRate=parseFloat(document.getElementById("inputannrate").value);
+               let years=parseFloat(document.getElementById("inputyears").value);
+               let periodsPerYear=parseFloat(document.getElementById("inputppy").value);
+               //this gives the answer and lets the user see the loan payment result on the screen
+               let answer1=computePayment(principal, annualRate, years, periodsPerYear);
+                document.getElementById('answer1').innerHTML="$"+ answer1;
+           }
+
+           function doBalance(){
+               let principal=parseFloat(document.getElementById("inputprinc").value);
+               let annualRate=parseFloat(document.getElementById("inputannrate").value);
+               let years=parseFloat(document.getElementById("inputyears").value);
+               let periodsPerYear=parseFloat(document.getElementById("inputppy").value);
+               let numberOfPaymentPaidToDate = parseFloat(document.getElementById('#ofpp2d').value);
+               let answer2=computeBalance(principal, annualRate, years, periodsPerYear, numberOfPaymentPaidToDate);
+               document.getElementById("answer2").innerHTML="$"+ answer2
+           }
+            //this is the formula which calculates the loan payment
+           function computePayment(principal, annualRate, years, periodsPerYear) {
+               let p = ((principal * (annualRate / periodsPerYear)) / (1 - Math.pow(1 + annualRate / periodsPerYear, -(years * periodsPerYear))))
+               return p.toFixed(2);
+            }
+            //this is the function which calculates the balance of a loan after x amount of payments already made
+           function computeBalance(principal, annualRate, years, periodsPerYear, numberOfPaymentPaidToDate) {
+               //have to define more variables
+               let p = computePayment(principal, annualRate, years, periodsPerYear);
+               let interestRatePerPeriod = annualRate / periodsPerYear;
+               //this is the formula which calculates the balance of a loan after x amount of payments already made
+               let b = principal * Math.pow(1 + interestRatePerPeriod, numberOfPaymentPaidToDate) - (p * ((Math.pow(1 + interestRatePerPeriod, numberOfPaymentPaidToDate) - 1) / interestRatePerPeriod));
+               return b.toFixed(2);
+            }
+       </script>
+       <style>
+                   
+        body{
+          width: 600px;  
+	      margin: 40px auto;
+          border: dotted;
+          color: #ffb6c1;
+        }
+        .form{
+          background-color: white; 
+	      padding: 15px 30px;         
+        }
+       output {
+            color: grey;
+            width: 110px;
+        }
+        button {
+            background-color:grey; 
+            color: white; 
+            font-size: x-small;
+            padding: 4px; 
+            border-radius: 2%;
+        }
+        label{
+            float: left;
+            width: 150px;
+            color: #ffb6c1;
+        }
+       </style>
+   </head>
+   <body>
+        <div class="form">
+        <form id="FORMMY"></form>
+        <h1>Loan Calculator</h1>
+        <label>AMOUNT BORROWED:</label>
+        <input type="text" id="inputprinc"><br/><br>
+        <label>ANNUAL INTEREST RATE:</label>
+        <input type="text" id="inputannrate"><br/><br/>
+        <label># OF YEARS:</label>
+        <input type="text" id="inputyears"><br/><br/>
+        <label>PAYMENTS/YEAR</label>
+        <input type="text" id="inputppy"><br/><br/>
+        <button type="button" class="button" onclick="doPayment()">CALCULATE PAYMENT</button><br/><br/>
+        <div class="output" id="answer1"></div>
+        <label># OF PAYMENTS PAID TO DATE</label>
+        <input type="text" id="#ofpp2d"><br/><br/>
+        <button type="button" class="button" onclick="doBalance()">CALCULATE PAYOFF AMOUNT</button><br/><br/>
+        <div class="output" id="answer2"></div>
+        </form>
+       </div>
+   </body>
+</html>

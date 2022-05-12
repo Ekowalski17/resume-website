@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <title>E. DAVIS | INVEST</title>   
+    <link rel="stylesheet" href="styles/main.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Allura&family=Cookie&family=Festive&display=swap" rel="stylesheet">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Amatic+SC&display=swap" rel="stylesheet">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Lobster+Two&display=swap" rel="stylesheet">
+
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@100&family=Share+Tech+Mono&display=swap" rel="stylesheet" >
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+</head>
+
+<body>
+    <nav>
+        <ul id="menu">
+            <li><a id="toggleMenu">&equiv;</a></li>
+            <li><a href="home.html">HOME</a></li>
+            <li><a href="TASK 2.html" class="active">LESSON 2</a></li>
+            <li><a href="TASK 3.html"class="active">LESSON 3</a></li>
+            <li><a href="TASK 4.html" class="active">LESSON 4</a></li>
+            <li><a href="TASK 5.html" class="active">LESSON 5</a></li>
+            <li><a href="TASK 6.html" class="active">PROJECT</a></li>
+        </ul>
+    </nav>
+    <header>
+        <label><strong>Click the HOME button to go back to my webpage</strong></label>
+        <h1>Functions</h1>
+    </header>
+    <main>
+        <section id="functions">
+            <article>
+                <h2>Addition</h2>
+                <div>
+                    <label for="addend1">Number 1:</label>
+                    <input type="text" id="addend1" name="addend1">
+                </div>
+                <div>
+                    <label for="addend2">Number 2:</label>
+                    <input type="text" id="addend2" name="addend2">
+                </div>
+                <div>
+                    <input type="button" id="addNumbers" value="Add Numbers">
+                </div>
+                <div>
+                    <label for="sum">Sum:</label>
+                    <input type="text" id="sum" name="sum" disabled>
+                </div>
+            </article>
+            <article>
+                <h2>Subtraction</h2>
+                <div>
+                    <label for="minuend">Number 1:</label>
+                    <input type="text" id="minuend" name="minuend">
+                </div>
+                <div>
+                    <label for="subtrahend">Number 2:</label>
+                    <input type="text" id="subtrahend" name="subtrahend">
+                </div>
+                <div>
+                    <input type="button" id="subtractNumbers" value="Subtract Numbers">
+                </div>
+                <div>
+                    <label for="difference">Difference:</label>
+                    <input type="text" id="difference" name="difference" disabled>
+                </div>
+            </article>
+            <article>
+                <h2>Multiplication</h2>
+                <div>
+                    <label for="factor1">Number 1:</label>
+                    <input type="text" id="factor1" name="factor1">
+                </div>
+                <div>
+                    <label for="factor2">Number 2:</label>
+                    <input type="text" id="factor2" name="factor2">
+                </div>
+                <div>
+                    <input type="button" id="multiplyNumbers" value="Multiply Numbers">
+                </div>
+                <div>
+                    <label for="product">Product:</label>
+                    <input type="text" id="product" name="product" disabled>
+                </div>
+            </article>
+            <article>
+                <h2>Division</h2>
+                <div>
+                    <label for="dividend">Number 1:</label>
+                    <input type="text" id="dividend" name="dividend">
+                </div>
+                <div>
+                    <label for="divisor">Number 2:</label>
+                    <input type="text" id="divisor" name="divisor">
+                </div>
+                <div>
+                    <input type="button" id="divideNumbers" value="Divide Numbers">
+                </div>
+                <div>
+                    <label for="quotient">Quotient:</label>
+                    <input type="text" id="quotient" name="quotient" disabled>
+                </div>
+            </article>
+        </section>
+        <hr>
+        <section>
+            <h2>Array Methods</h2>
+            <p>
+                Source Array: <span id="array"></span>
+            </p>
+            <p>
+                Odd Numbers: <span id="odds"></span>
+            </p>
+            <p>
+                Even Numbers: <span id="evens"></span>
+            </p>
+            <p>
+                Sum of Source Array: <span id="sumOfArray"></span>
+            </p>
+            <p>
+                Source Array Times Two: <span id="multiplied"></span>
+            </p>
+            <p>
+                Sum of Source Array Times Two: <span id="sumOfMultiplied"></span>
+            </p>
+        </section>
+    </main>
+    <footer>
+        &copy;<span id="year"></span> | Functions | Lesson 3
+    </footer>
+    <script src="scripts/main.js"></script>
+    <script src="scripts/task3.js"></script>
+</body>
+
+</html>

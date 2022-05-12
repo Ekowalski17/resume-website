@@ -1,0 +1,48 @@
+<!DOCTYPE HTML>
+<html lang="en-us">
+
+<head>
+    <meta charset="utf-8">
+    <title>E. DAVIS| MILAGE CALCULATOR</title>
+    <link rel="stylesheet" href="styles/main.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Allura&family=Cookie&family=Festive&display=swap" rel="stylesheet">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Amatic+SC&display=swap" rel="stylesheet">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Lobster+Two&display=swap" rel="stylesheet">
+
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@100&family=Share+Tech+Mono&display=swap" rel="stylesheet" >
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+
+
+    <script>
+
+function millege() {
+            let inodem = parseFloat(document.getElementById('initial').value);
+            let endom = parseFloat(document.getElementById('end').value);
+            let gall = parseFloat(document.getElementById('gallon').value);
+
+            let result = ((endom- inodem) / gall).toFixed(2);
+
+            document.getElementById('output').innerHTML = "THE MILEGE YOU USED IN MILES PER HOUR =" + result + " mpg." + "<b>"
+        }
+       
+    </script>
+</head>
+
+<body>
+    <h1>Milage Calculator</h1><br>
+    ENTER INTIAL ODEMETER COUNT: <input type="text" id="initial"><br> 
+    ENTER END ODEMETER COUNT: <input type="text" id="end" ><br> 
+    NUMBER OF GASOLINE USED: <input type="text" id="gallon"><br><br>
+    <button class="button" type="button"onclick="millege()">CALCULATE</button><br><br>
+    <div id="output"></div>
+</body>

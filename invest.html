@@ -1,0 +1,117 @@
+<!Doctype html>
+
+<html lang="en-us">
+<head>
+        <meta charset="utf-8">
+        <title>E. DAVIS | INVEST</title>   
+        <link rel="stylesheet" href="styles/main.css">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+        <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css">
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Allura&family=Cookie&family=Festive&display=swap" rel="stylesheet">
+    
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Amatic+SC&display=swap" rel="stylesheet">
+    
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Lobster+Two&display=swap" rel="stylesheet">
+    
+        <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@100&family=Share+Tech+Mono&display=swap" rel="stylesheet" >
+        <link rel="preconnect" href="https://fonts.gstatic.com">
+    
+    <script>
+        /* 
+        Input: 
+        First Function: get input values from the user
+        Second Fuction: Also gets input from the user
+        Processing: 
+        First Function: calls the computeFutureValue function
+        Second Function: Takes the first function and calculates the future value of an investment
+        Output: 
+        Second Function: Returns furture value of an investment*/
+
+        //get user input from the text field for principal, rate, year, and periods per year
+        function doFV() {
+        var principal = parseFloat(document.getElementById('princ').value);
+        var annualRate = parseFloat(document.getElementById('annrate').value);
+        var years = parseFloat(document.getElementById('yrs').value);
+        var periodsPerYear = parseFloat(document.getElementById('ppy').value);
+        //This is a function call
+        var futurevalue = computeFutureValue(principal, annualRate, years, periodsPerYear);
+        //This displays the result
+        document.getElementById('outputDiv').innerHTML = 'Future Value is $ ' + futurevalue;
+        }
+        //this caluculates and return to the user the future value of an investment
+        function computeFutureValue(principal, annualRate, years, periodsPerYear){
+            var f = principal * Math.pow(1 + annualRate / periodsPerYear, (years * periodsPerYear));
+            return f.toFixed(2);
+
+        }
+        //I want to learn how to reset a button so it is easier for the user to use this program
+        function startover(){
+            document.getElementById("FORMMY").reset()
+
+        }
+    </script>
+    <style>
+        /* I want to expand my horizon and start including some projects from this
+        class into my resume profile and so I am going to mess try to expand my knowledge
+        of CSS and hopefully insert this project to my resume profile*/
+        body{
+          width: 600px;  
+	      margin: 40px auto;
+          border: dotted;
+          color: #ffb6c1;
+        }
+        .form{
+          background-color: white; 
+	      padding: 15px 30px;         
+        }
+       output {
+            color: grey;
+            width: 110px;
+        }
+        .button{
+            background-color: #ffb6c1;
+            border: none;
+            color: white;
+            padding: 15px 32px;
+            text-decoration: none;
+            display: inline-block;
+            font-size: 16px;
+            margin: 4px 2px;
+            cursor: pointer;
+            font-family: 'Roboto',sans-serif ;
+            text-align: center;
+        }
+        label{
+            font-family: 'Roboto',sans-serif;
+            font-size: large;
+        }
+</style>
+</head>
+
+
+    <body>
+    <div class="form">
+    <form id="FORMMY">
+        <h1>Investment Calculator</h1>
+        <label >INTIAL AMOUNT:</label>
+        <input type="text" id="princ" size=12><br/><br>
+        <label>ANNUAL RATE:</label>
+        <input type="text" id="annrate" size=12><br/><br>
+        <label># OF YEARS:</label>
+        <input type="text" id="yrs" size="12"><br/><br>
+        <label>PERIODS/YEAR:</label>
+        <input type="text" id="ppy" size="12"><br/><br>
+    </form>
+    <button class="button" type="button" onclick="doFV()">CALCULATE</button><br/><br>
+    <button class="button" onclick="startover()" value="Reset">RESET</button><br/><br/>
+
+    <div class="output" id="outputDiv"></div>
+        </div>
+    </body>
+</html>
