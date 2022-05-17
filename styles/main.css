@@ -141,30 +141,30 @@ img{
 /*home page code*/
 
 .pane1{
-    position: relative;
+    margin: auto;
+    position: center;
     width: 515px;
     height: 420px;
     background-color:#ffb6c1;
     color: black;
-    margin-left: 120px;
     text-align: center;
 }
 .pane2{
-    position: relative;
+    margin: auto;
+    position: center;
     width: 515px;
     height:410px;
     background-color:#ffb6c1;
     color: black;
-    margin-left: 640px;
     text-align: center;
 }
 .pane3{
-    position: relative;
+    margin: auto;
+    position: center;
     width: 515px;
     height:410px;
     background-color:#ffb6c1;
     color: black;
-    margin-left: 120px;
     text-align: center;
 }
 .side-pane{
