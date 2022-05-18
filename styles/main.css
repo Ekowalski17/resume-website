@@ -92,9 +92,9 @@ section {
 /* ID Selectors */
 
 /* Media Queries */
-@media all and (min-width: 32.5em) {
+@media all and (max-width: 32.5em) {
     nav ul {
-        flex-direction: row;
+        flex-direction: column;
     }
     
     nav ul li:first-child {
