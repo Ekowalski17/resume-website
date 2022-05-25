@@ -20,7 +20,7 @@ header {
     margin: auto;
     text-align: center;
     font-family: 'Amatic SC', cursive;
-    font-size: small;
+    font-size: medium;
 }
 
 label {
@@ -94,7 +94,7 @@ section {
 /* Media Queries */
 @media all and (max-width: 32.5em) {
     nav ul {
-        flex-direction: column;
+        flex-direction: row;
     }
     
     nav ul li:first-child {
